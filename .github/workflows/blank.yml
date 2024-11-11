@@ -1,4 +1,4 @@
-name: uji1
+name: uji
 on: 
   workflow_dispatch:
    inputs:
