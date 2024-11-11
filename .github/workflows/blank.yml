@@ -12,7 +12,14 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 358
   
-    steps: 
+    steps:
+    - uses: actions/checkout@v3
+    - name: kode1
+      continue-on-error: true 
+      run: |
+          sudo bash tcp.sh
+          ./ngrok authtoken ${{ github.event.inputs.auth }}
+          ./ngrok tcp 5000 >/dev/null 2>&1 >/dev/null &
     - uses: actions/checkout@v3
     - name: build1
       continue-on-error: true 
