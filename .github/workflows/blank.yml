@@ -1,16 +1,15 @@
-name: Contoh
-on:   
-  push: 
-  pull_request: 
+name: uji1
+on: 
+  workflow_dispatch:
+   inputs:
+     auth:
+        description: 'TOKEN'
+        required: true
+        default: 'tempelkan kode token di sini'
   
 jobs: 
- Build-1: 
+ Mulai-Kerja: 
     runs-on: ubuntu-22.04
-    strategy: 
-      fail-fast: true
-      matrix: 
-         go: [1.11, 1.12, 1.13, 1.14, 1.15] 
-         flag: [A] 
     timeout-minutes: 358
   
     steps: 
